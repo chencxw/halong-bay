@@ -26,6 +26,10 @@ update(0);
 
 /* Event Listner */
 window.addEventListener("mousemove", (e) => {
+    // Disable mouse movements during animation
+    if(parallax_animation.isActive() || text_animation.isActive() || header_animation.isActive()) {
+        return;
+    }
     // Position of mouse from the center of the window
     xValue = e.clientX - window.innerWidth / 2;
     yValue = e.clientY - window.innerHeight / 2;
