@@ -78,24 +78,30 @@ main {
 
 .bg-img {
     position: absolute;
-    width: 145.83%;
-    top: 61.11%;
+    /* width: 145.83%;
+    top: 61.11%; */
+    width: 2800px;
+    top: calc(50% + 200px);
     left: 50%;
     z-index: 1;
 }
 
 .background-fog-2 {
     position: absolute;
-    width: 145.83%;
-    top: 56.67%;
+    /* width: 145.83%;
+    top: 56.67%; */
+    width: 2800px;
+    top: calc(50% + 200px);
     left: 50%;
     z-index: 2;
 }
 
 .right-mountain-2 {
     position: absolute;
-    width: 78.125%;
+    width: 78.125%; 
     top: 63.89%;
+    /* width: 1500px;
+    top: calc(50% + 150px); */
     left: 70.833%;
     z-index: 3;
 }
@@ -112,6 +118,8 @@ main {
     position: absolute;
     width: 145.83%;
     top: 73.15%;
+    /* width: 2800px;
+    top: calc(50% + 250px); */
     left: 50%;
     z-index: 4;
 }
@@ -141,6 +149,7 @@ main {
     color: #fff;
     text-transform: uppercase;
     pointer-events: auto;
+    width: 100%;
 }
 
 .landing-text h2 {
@@ -166,7 +175,7 @@ main {
 .front-mountain-right {
     position: absolute;
     width: 15.625%;
-    top: 64.8148%;
+    top: 70%;
     left: 76.04167%;
     z-index: 9;
 }
@@ -206,4 +215,133 @@ main {
     left: 0;
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7));
     pointer-events: none;
+}
+
+/* Media Queries */
+@media(max-width: 93.125em) {
+    .landing-text h1 {
+        font-size: 6.5rem;
+    }
+
+    .landing-text h2 {
+        font-size: 5rem;
+    }
+}
+
+@media(max-width: 81.25em) {
+    .right-mountain-2 {
+        top: 50%;
+    }
+
+    .left-mountain {
+        top: 45%;
+    }
+
+    .background-fog {
+        top: 65%;
+    }
+
+    .right-mountain-1 {
+        top: 45%;
+    }
+
+    .front-mountain-left {
+        top: 53%;
+    }
+
+    .front-mountain-right {
+        top: 47%;
+    }
+}
+
+@media(max-width: 68.75em) {
+    .landing-text h1 {
+        font-size: 5.5rem;
+    }
+
+    .landing-text h2 {
+        font-size: 4.5rem;
+    }
+}
+
+@media(max-width: 50em) {
+    .landing-text h1 {
+        font-size: 5rem;
+        line-height: 1.1;
+    }
+
+    .landing-text h2 {
+        font-size: 4.1rem;
+        line-height: 1.1;
+    }
+
+    .bg-img {
+        width: initial;
+        height: 233.328%;
+    }
+
+    .background-fog-2 {
+        width: initial;
+        height: 233.328%;
+    }
+
+    .right-mountain-2 {
+        width: initial;
+        height: 125%;
+        top: 63.89%;
+    }
+
+    .left-mountain {
+        width: initial;
+        /* height: 133.328%; */
+        height: 100%;
+        top: 65%;
+    }
+
+    .background-fog {
+        width: initial;
+        height: 233.328%;
+        top: 73.15%;
+    }
+
+    .right-mountain-1 {
+        width: initial;
+        /* height: 108.32%; */
+        height: 95%;
+        top: 68%;
+    }
+
+    .blue-fog {
+        width: initial;
+        height: 208.32%;
+    }
+
+    .front-mountain-left {
+        width: initial;
+        height: 60%;
+        left: 15%;
+        top: 80%;
+    }
+
+    .front-mountain-right {
+        width: initial;
+        height: 70%;
+        top: 75%;
+        left: 90vw;
+    }
+
+    .top-fog {
+        width: initial;
+        height: 233.3328%;
+    }
+}
+
+@media(max-width: 32.5em) {
+    .landing-text h1 {
+        font-size: 3.3rem;
+    }
+
+    .landing-text h2 {
+        font-size: 2.6rem;
+    }
 }

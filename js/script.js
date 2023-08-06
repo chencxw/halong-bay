@@ -5,7 +5,7 @@ const landing = document.querySelector(".landing-section");
 let xValue = 0, yValue = 0;
 let rotateDegree = 0;
 
-/* Helper Function */
+// Helper Function
 function update(cursorPosition) {
     // Move each layer depending on the mouse movement
     parallax_el.forEach( el => {
@@ -24,7 +24,7 @@ function update(cursorPosition) {
 };
 update(0);
 
-/* Event Listner */
+/* Event Listners */
 window.addEventListener("mousemove", (e) => {
     // Disable mouse movements during animation
     if(parallax_animation.isActive() || text_animation.isActive() || header_animation.isActive()) {
@@ -37,6 +37,23 @@ window.addEventListener("mousemove", (e) => {
     rotateDegree = (xValue / (window.innerWidth / 2) ) * 20;
 
     update(e.clientX);
+})
+
+// Make the height of the landing section responsive
+window.addEventListener('load', () => {
+    if(window.innerWidth >= 800) {
+        landing.style.maxHeight = `${window.innerWidth * 0.5}px`;
+    } else {
+        landing.style.maxHeight = `${window.innerWidth * 1.6}px`;
+    }
+})
+
+window.addEventListener('resize', () => {
+    if(window.innerWidth >= 800) {
+        landing.style.maxHeight = `${window.innerWidth * 0.5}px`;
+    } else {
+        landing.style.maxHeight = `${window.innerWidth * 1.6}px`;
+    }
 })
 
 // GSAP Animation
