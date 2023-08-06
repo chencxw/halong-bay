@@ -5,7 +5,7 @@ const landing = document.querySelector(".landing-section");
 let xValue = 0, yValue = 0;
 let rotateDegree = 0;
 
-/* Helper Function */
+// Helper Function
 function update(cursorPosition) {
     // Move each layer depending on the mouse movement
     parallax_el.forEach( el => {
@@ -24,8 +24,12 @@ function update(cursorPosition) {
 };
 update(0);
 
-/* Event Listner */
+/* Event Listners */
 window.addEventListener("mousemove", (e) => {
+    // Disable mouse movements during animation
+    if(parallax_animation.isActive() || text_animation.isActive() || header_animation.isActive()) {
+        return;
+    }
     // Position of mouse from the center of the window
     xValue = e.clientX - window.innerWidth / 2;
     yValue = e.clientY - window.innerHeight / 2;
@@ -35,3 +39,54 @@ window.addEventListener("mousemove", (e) => {
     update(e.clientX);
 })
 
+// Make the height of the landing section responsive
+window.addEventListener('load', () => {
+    if(window.innerWidth >= 800) {
+        landing.style.maxHeight = `${window.innerWidth * 0.5}px`;
+    } else {
+        landing.style.maxHeight = `${window.innerWidth * 1.6}px`;
+    }
+})
+
+window.addEventListener('resize', () => {
+    if(window.innerWidth >= 800) {
+        landing.style.maxHeight = `${window.innerWidth * 0.5}px`;
+    } else {
+        landing.style.maxHeight = `${window.innerWidth * 1.6}px`;
+    }
+})
+
+// GSAP Animation
+// Animation for all images except text
+gsap.utils.toArray(".parallax").forEach(el => {
+    if(el.classList.contains("landing-text")) {
+        return
+    }
+
+    parallax_animation = gsap.from(el, {
+        top: `${window.innerHeight/2 + parseFloat(el.dataset.distance)}px`, 
+        duration: 3,
+        ease: "power3.out"
+    });
+});
+
+// Animation for text
+gsap.from(".landing-text h1", {
+    y: window.innerHeight,
+    duration: 2,
+    delay: 1.5
+})
+
+text_animation = gsap.from(".landing-text h2", {
+    y: -150,
+    opacity: 0,
+    duration: 1.5,
+    delay: 2,
+})
+
+// Fade in Animation for non-moving elements
+header_animation = gsap.from(".hide", {
+    opacity: 0,
+    duration: 1.5,
+    delay: 2,
+})
