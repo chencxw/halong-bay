@@ -1,3 +1,5 @@
+/* Box Sizing/Normalizing Styles
+--------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -6,10 +8,14 @@
     box-sizing: border-box;
 }
 
+/* Typography
+--------------------------------------------- */
 body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Header
+--------------------------------------------- */
 .main-header {
     width: 100%;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -42,7 +48,7 @@ body {
 }
 
 .logo:hover {
-    color: #7c7c7c;
+    color: #a9a9a9;
 }
 
 .btn-menu {
@@ -54,7 +60,7 @@ body {
 }
 
 .btn-menu:hover {
-    fill: #7c7c7c;
+    fill: #a9a9a9;
 }
 
 .site-nav {
@@ -88,53 +94,45 @@ body {
 
 .site-nav a:hover {
     color: #353434;
-    background-color: #ffffff6e;
+    background-color: #a9a9a9;
 } 
 
+@media(min-width: 50em) {
+    .btn-menu {
+        display: none;
+    }
 
-/* .site-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
+    .site-nav {
+        visibility: visible;
+        height: auto;
+        width: auto;
+        position: static;
+    }
+
+    .site-nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .site-nav a {
+        display: inline;
+        padding: 0rem 1.5rem;
+    }
+
+    .site-nav a:hover {
+        background-color: transparent;
+        color: #a9a9a9;
+    }
 }
 
-.site-nav ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    align-items: center;
-}
-
-.site-nav a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0rem 1.5rem;
-}
-
-.site-nav a:hover {
-    color: #7c7c7c;
-}
-
-.site-nav a:hover svg {
-    fill: #7c7c7c;
-}
-
-.site-nav svg {
-    fill: #fff;
-}
-
-.logo {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}  */
-
+/* Main Styles
+--------------------------------------------- */
 main {
     height: 100vh;
 }
 
+/* Landing Section/3D Parallax Section
+--------------------------------------------- */
 .landing-section {
     height: 100vh;
     width: 100vw;
@@ -334,6 +332,10 @@ main {
 
     .landing-text h2 {
         font-size: 4.5rem;
+    }
+
+    .landing-text {
+        top: 42%;
     }
 }
 
