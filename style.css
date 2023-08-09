@@ -1,3 +1,5 @@
+/* Box Sizing/Normalizing Styles
+--------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -6,10 +8,14 @@
     box-sizing: border-box;
 }
 
+/* Typography
+--------------------------------------------- */
 body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Header
+--------------------------------------------- */
 .main-header {
     width: 100%;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -17,51 +23,116 @@ body {
     top: 0;
     left: 0;
     z-index: 9999;
-}
-
-.site-nav {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease 0.1s;
 }
 
-.site-nav ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    align-items: center;
+.show .main-header {
+    background-color:  #353434df;
+    transition: background-color 0.1s;
 }
 
-.site-nav a {
+.main-header a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 0rem 1.5rem;
-}
-
-.site-nav a:hover {
-    color: #7c7c7c;
-}
-
-.site-nav a:hover svg {
-    fill: #7c7c7c;
-}
-
-.site-nav svg {
-    fill: #fff;
 }
 
 .logo {
+    margin: 0.8rem 1.5rem;
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
 
+.logo:hover {
+    color: #a9a9a9;
+}
+
+.btn-menu {
+    background-color: transparent;
+    border: none;
+    margin: 0.8rem 1.5rem;
+    cursor: pointer;
+    fill: #fff;
+}
+
+.btn-menu:hover {
+    fill: #a9a9a9;
+}
+
+.site-nav {
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 69px;
+    left: 0;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.show .site-nav {
+    visibility: visible;
+    height: 150px;
+    background-color: #353434df;
+    transition: height 0.3s ease;
+}
+
+.site-nav ul {
+    text-align: center;
+}
+
+.site-nav a {
+    padding: 1.5rem 0rem;
+    display: block;
+}
+
+.site-nav a:hover {
+    color: #353434;
+    background-color: #a9a9a9;
+} 
+
+@media(min-width: 50em) {
+    .btn-menu {
+        display: none;
+    }
+
+    .site-nav {
+        visibility: visible;
+        height: auto;
+        width: auto;
+        position: static;
+    }
+
+    .site-nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .site-nav a {
+        display: inline;
+        padding: 0rem 1.5rem;
+    }
+
+    .site-nav a:hover {
+        background-color: transparent;
+        color: #a9a9a9;
+    }
+}
+
+/* Main Styles
+--------------------------------------------- */
 main {
     height: 100vh;
 }
 
+/* Landing Section/3D Parallax Section
+--------------------------------------------- */
 .landing-section {
     height: 100vh;
     width: 100vw;
@@ -261,6 +332,10 @@ main {
 
     .landing-text h2 {
         font-size: 4.5rem;
+    }
+
+    .landing-text {
+        top: 42%;
     }
 }
 
