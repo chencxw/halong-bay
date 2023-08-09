@@ -11,11 +11,19 @@ let rotateDegree = 0;
 /* Main Header - Open/Close Menu */ 
 function openMenu() {
     body.classList.toggle('show');
-    // nav.classList.toggle('activated');
 }
 
 /* Header menu button event listener */
 btnMenu.addEventListener('click', openMenu);
+
+/* Media Query to remove event listener when browser is resized */
+const mql = window.matchMedia('(min-width: 800px)');
+
+mql.addEventListener("change", (e) => {
+    if(e.matches) {
+        body.classList.remove('show');
+    }
+})
 
 /* Function to apply transform on images depending on mose movement */
 function update(cursorPosition) {
