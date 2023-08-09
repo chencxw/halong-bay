@@ -1,11 +1,23 @@
 /* Variables */
+const body = document.body;
+const btnMenu = document.getElementById("btn-menu");
+const nav = document.getElementById("site-nav")
 const parallax_el = document.querySelectorAll(".parallax");
 const landing = document.querySelector(".landing-section");
 // X and Y axis variables
 let xValue = 0, yValue = 0;
 let rotateDegree = 0;
 
-// Helper Function
+/* Main Header - Open/Close Menu */ 
+function openMenu() {
+    body.classList.toggle('show');
+    // nav.classList.toggle('activated');
+}
+
+/* Header menu button event listener */
+btnMenu.addEventListener('click', openMenu);
+
+/* Function to apply transform on images depending on mose movement */
 function update(cursorPosition) {
     // Move each layer depending on the mouse movement
     parallax_el.forEach( el => {
@@ -24,7 +36,7 @@ function update(cursorPosition) {
 };
 update(0);
 
-/* Event Listners */
+/* Mouse move event listener */
 window.addEventListener("mousemove", (e) => {
     // Disable mouse movements during animation
     if(parallax_animation.isActive() || text_animation.isActive() || header_animation.isActive()) {
