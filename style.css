@@ -179,8 +179,8 @@ main {
 
 .left-mountain {
     position: absolute;
-    width: 83.33%;
-    top: 65%;
+    width: 85%;
+    top: 68%;
     left: 30%;
     z-index: 3;
 }
