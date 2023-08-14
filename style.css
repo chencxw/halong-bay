@@ -499,9 +499,10 @@ main {
 
 .arrow-container {
     position: relative;
-    width: fit-content;
+    width: 175px;
     margin-left: auto;
     margin-right: 0.5rem;
+    overflow: hidden;
 }
 
 .arrow-left,
