@@ -14,6 +14,12 @@
     box-sizing: border-box;
 }
 
+/* Elements
+--------------------------------------------- */
+a {
+    text-decoration: none;
+}
+
 /* Typography
 --------------------------------------------- */
 body {
@@ -49,7 +55,6 @@ h4 {
 
 .main-header a {
     color: #fff;
-    text-decoration: none;
     text-transform: uppercase;
 }
 
@@ -488,6 +493,155 @@ main {
     font-weight: normal;
     text-transform: uppercase;
 }
+
+/* See More Link */
+/* Adapted from https://codepen.io/nicoencarnacion/pen/XpaRQV */
+
+.arrow-container {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 64px;
+    transition: all 0.2s;
+}
+
+.arrow-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.arrow-left .arrow-body,
+.arrow-left .arrow-body::before,
+.arrow-left .arrow-body::after {
+    width: 0;
+    background-color: #353434;
+}
+
+.arrow-left .arrow-body::before,
+.arrow-left .arrow-body::after {
+    transform: rotate(0);
+}
+
+.arrow-right .arrow-body {
+    width: 64px;
+    transition-delay: 0.2s;
+}
+
+.arrow-right .arrow-body::before,
+.arrow-right .arrow-body::after {
+    width: 10px;
+    transition-delay: 0.3s;
+    transition: all 0.5s;
+}
+
+.arrow-right .arrow-body::before {
+    transform: rotate(40deg);
+}
+
+.arrow-right .arrow-body::after {
+    transform: rotate(-40deg);
+}
+
+.arrow-body {
+    background-color: #353434;
+    display: block;
+    height: 1px;
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+}
+
+.arrow-body::before, 
+.arrow-body::after {
+    background-color: #353434;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+    transition-delay: 0;
+}
+
+.arrow-body::before {
+    transform-origin: top right;
+}
+
+.arrow-body::after {
+    transform-origin: bottom right;
+}
+
+.see-more-link {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    display: inline-block;
+    color: #353434;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.see-more-link:hover {
+    color: var(--main-color);
+}
+
+.see-more-link:hover .arrow-left .arrow-body {
+    width: 64px;
+    transition-delay: 0.1s;
+    background-color: var(--main-color);
+}
+
+.see-more-link:hover .arrow-left .arrow-body::before,
+.see-more-link:hover .arrow-left .arrow-body::after {
+    width: 10px;
+    transition-delay: 0.1s;
+    background-color: var(--main-color);
+}
+
+.see-more-link:hover .arrow-left .arrow-body::before {
+    transform: rotate(40deg);
+}
+
+.see-more-link:hover .arrow-left .arrow-body::after {
+    transform: rotate(-40deg);
+}
+
+.see-more-link:hover .main-arrow {
+    transform: translateX(80px)
+}
+
+.see-more-link:hover .arrow-right .arrow-body {
+    width: 0;
+    transform: translateX(200%);
+    transition-delay: 0;
+}
+
+.see-more-link:hover .arrow-right .arrow-body::before,
+.see-more-link:hover .arrow-right .arrow-body::after {
+    width: 0;
+    transition-delay: 0;
+    transition: all 0.1s;
+    transform: rotate(0)
+}
+
+.main-arrow {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.main-arrow .link-text {
+    margin-right: 0.6rem;
+}
+
+
 
 @media(min-width: 50em) {
     .hotel-grid {
