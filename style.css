@@ -719,8 +719,10 @@ main {
 }
 
 .secondary-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 300;
+    display: inline-block;
+    width: 270px;
 }
 
 .btn-wrapper {
@@ -732,4 +734,10 @@ main {
     color: var(--main-color);
     border: 1px solid var(--main-color);
     padding: 0.5rem 1.5rem;
+}
+
+@media(min-width: 31.25em) {
+    .book-section {
+        padding-left: 12vw;
+    }
 }
