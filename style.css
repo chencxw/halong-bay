@@ -323,7 +323,7 @@ main {
     }
 
     .left-mountain {
-        top: 45%;
+        top: 50%;
     }
 
     .background-fog {
@@ -331,7 +331,12 @@ main {
     }
 
     .right-mountain-1 {
-        top: 45%;
+        top: 53%;
+    }
+
+    .right-mountain-2 {
+        top: 55%;
+        left: 80%;
     }
 
     .front-mountain-left {
