@@ -433,6 +433,7 @@ main {
     }
 }
 
+/* Media Queries */
 @media(max-width: 32.5em) {
     .landing-text h1 {
         font-size: 3.3rem;
@@ -651,8 +652,7 @@ main {
     margin-right: 0.6rem;
 }
 
-
-
+/* Media Queries */
 @media(min-width: 50em) {
     .hotel-grid {
         display: grid;
@@ -749,8 +749,16 @@ main {
     color: var(--main-color);
     border: 1px solid var(--main-color);
     padding: 0.5rem 1.5rem;
+    transition: 0.25s;
 }
 
+.book-btn:hover,
+.book-btn:focus {
+    color: #fff;
+    box-shadow: inset 0 0 0 2rem var(--main-color);
+}
+
+/* Media Queries */
 @media(min-width: 31.25em) {
     .book-section {
         padding-left: 12vw;
