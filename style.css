@@ -20,16 +20,16 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+}
+
 /* Typography
 --------------------------------------------- */
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-h3, 
-h4 {
-    color: #fff;
-}
 
 /* Header
 --------------------------------------------- */
@@ -128,7 +128,6 @@ h4 {
 
     .site-nav ul {
         display: flex;
-        list-style: none;
     }
 
     .site-nav a {
@@ -140,12 +139,6 @@ h4 {
         background-color: transparent;
         color: #a9a9a9;
     }
-}
-
-/* Main Styles
---------------------------------------------- */
-main {
-    height: 100vh;
 }
 
 /* Landing Section/3D Parallax Section
@@ -502,6 +495,7 @@ main {
 .card-text h3 {
     font-weight: normal;
     text-transform: uppercase;
+    color: #fff;
 }
 
 /* See More Link */
@@ -741,7 +735,7 @@ main {
 }
 
 .btn-wrapper {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .book-btn {
@@ -775,3 +769,60 @@ main {
         width: 320px;
     }
 }
+
+/* Footer
+--------------------------------------------- */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+.links h3 {
+    text-align: center;
+    color: var(--main-color);
+}
+
+.links li {
+    text-align: center;
+}
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h3 {
+    color: var(--main-color);
+}
+
+.socialmedia-icons h3 {
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.socialmedia-icons ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialmedia-icons svg {
+    fill: var(--main-color);
+}
+
+/* @media(min-width: 31.25em) {
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .copyright {
+        width: 100%;
+        text-align: center;
+    }
+} */
