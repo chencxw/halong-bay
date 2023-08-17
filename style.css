@@ -764,3 +764,14 @@ main {
         padding-left: 12vw;
     }
 }
+
+@media(min-width: 75em) {
+    .book-section h2 {
+        font-size: 4rem;
+    }
+
+    .secondary-text {
+        font-size: 1.5rem;
+        width: 320px;
+    }
+}
