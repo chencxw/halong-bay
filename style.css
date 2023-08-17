@@ -709,13 +709,28 @@ main {
     color: var(--main-color);
 }
 
-.bg-text {
-    font-size: 15rem;
-    color: rgba(0, 0, 0, 0.08);
+.bg-text-wrapper {
     position: absolute;
     top: 20%;
     left: 0;
     z-index: -1;
+    animation: text-animation 30s infinite linear;
+}
+
+.bg-text {
+    font-size: 15rem;
+    color: rgba(0, 0, 0, 0.08);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@keyframes text-animation {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .secondary-text {
